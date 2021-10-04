@@ -34,8 +34,9 @@ export default {
 
 <style>
 .main {
-  height: 400px;
+  height: 430px;
   width: 285px;
   margin: 0 auto;
+  overflow: hidden;
 }
 </style>

@@ -1,29 +1,15 @@
 <template>
-  <div id="app">
+  <v-app id="app">
     <app-header />
     <app-main />
-  </div>
+  </v-app>
 </template>
 
 <script>
-// import Vue from 'vue';
-// import Vuex from 'vuex';
-
-// Vue.use(Vuex);
-// Vue.use(Buefy);
-
-// import store from './store';
-
-// import Buefy from 'buefy';
-// import 'buefy/dist/buefy.min.css';
-// import '@mdi/font/css/materialdesignicons.css';
-
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 
 export default {
-  // store,
-  // Buefy,
   name: 'App',
   components: {
     AppHeader,
@@ -32,15 +18,14 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 #app {
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 60px;
   width: 312px;
-  height: 500px;
-  background-color: rgb(21, 25, 27);
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  height: 530px;
+  font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

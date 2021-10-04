@@ -1,30 +1,38 @@
 <template>
-  <b-field
-    :label="labelText"
-    custom-class="has-text-grey-lighter is-4"
-    :type="{ 'is-danger': errorMsg }"
-    :message="errorMsg"
-    label-for="app-input"
-  >
-    <b-input
-      v-model="cityName"
-      placeholder="Enter city name"
-      id="app-input"
-      icon="../assets/psbrella.png"
-      @keypress.enter.native="addCity"
-    >
-    </b-input>
-    <b-button type="is-primary" @click="addCity">{{ buttonText }}</b-button>
-  </b-field>
+  <v-form @submit.prevent="addCity">
+    <v-container>
+      <v-row>
+        <v-col cols="12" class="pb-0 pt-0">
+          <v-text-field
+            v-model="cityName"
+            :label="labelText"
+            placeholder="Enter city name"
+            outlined
+            color="purple darken-6"
+            :prepend-inner-icon="icons.mdiMapMarker"
+            :error-messages="this.errorMsg"
+          >
+            <template v-slot:append v-if="buttonText === 'Yeah!'">
+              <v-btn color="orange" outlined small @click="addCity">
+                {{ buttonText }}
+              </v-btn>
+            </template>
+          </v-text-field>
+        </v-col>
+      </v-row>
+      <v-row class="mt-0" v-if="buttonText !== 'Yeah!'">
+        <v-col cols="12" class="d-flex flex-row-reverse pt-0">
+          <v-btn color="orange" outlined large @click="addCity">
+            {{ buttonText }}
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-form>
 </template>
 
 <script>
-// import Vue from 'vue';
-// import { Field, Input, Button } from 'buefy';
-
-// Vue.use(Field);
-// Vue.use(Input);
-// Vue.use(Button);
+import { mdiMapMarker } from '@mdi/js';
 
 export default {
   name: 'AppInput',
@@ -35,6 +43,9 @@ export default {
   data() {
     return {
       cityName: '',
+      icons: {
+        mdiMapMarker,
+      }
     };
   },
   computed: {
@@ -59,9 +70,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.help.is-danger {
-  font-weight: bold;
-}
-</style>

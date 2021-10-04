@@ -7,24 +7,38 @@
         src="../assets/psbrella.png"
         height="50"
       />
-      <h1 class="title is-4 has-text-grey-lighter">PS weather</h1>
+      <h1 class="grey--text text--lighten-1">PS weather</h1>
     </div>
     <div class="header__settings" v-show="citiesList.length >= 1">
-      <button class="button is-info" @click="toggleSettings">
-        <b-icon icon="cog" size="is-medium"> </b-icon>
-      </button>
+      <v-btn
+        color="blue"
+        elevation="2"
+        icon
+        large
+        rounded
+        tile
+        @click="toggleSettings"
+      >
+        <v-icon large>
+          {{ icons.mdiCog }}
+        </v-icon>
+      </v-btn>
     </div>
   </div>
 </template>
 
 <script>
-// import Vue from 'vue';
-// import { Icon } from 'buefy';
-
-// Vue.use(Icon);
+import { mdiCog } from '@mdi/js';
 
 export default {
   name: 'AppHeader',
+  data() {
+    return {
+      icons: {
+        mdiCog,
+      },
+    };
+  },
   methods: {
     toggleSettings() {
       this.$store.commit('TOGGLE_SETTINGS');
@@ -32,6 +46,7 @@ export default {
   },
   computed: {
     citiesList() {
+      console.log(this.icons.logo);
       return this.$store.getters.citiesList;
     },
   },

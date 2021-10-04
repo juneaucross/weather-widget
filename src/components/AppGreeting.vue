@@ -1,6 +1,6 @@
 <template>
   <section class="greeting">
-    <h1 class="title is-3 has-text-grey-lighter">Hi there!</h1>
+    <h4 class="grey--text text--lighten-1 text-h4 mb-5">Hi there!</h4>
     <app-input :buttonText="buttonText" :labelText="labelText" />
   </section>
 </template>
@@ -15,8 +15,8 @@ export default {
   },
   data() {
     return {
-      buttonText: "I'm here!",
       labelText: 'Where are you now?',
+      buttonText: "I'm here!",
     };
   },
 };

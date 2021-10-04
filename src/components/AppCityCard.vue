@@ -1,6 +1,14 @@
 <template>
   <li class="cards-list-item">
-    <div class="city-card">
+    <v-skeleton-loader
+      v-if="isLoading"
+      class="mx-auto mt-3"
+      max-width="285"
+      height="204.5"
+      type="card"
+    ></v-skeleton-loader>
+
+    <div class="city-card" v-else>
       <div class="city-card__row city-card__row--name">
         <span class="city-card__name">
           {{ currentWeather.name }}, {{ currentWeather.sys.country }}</span
@@ -36,14 +44,18 @@
           </span>
 
           <span class="city-card__wind" title="Wind">
-            <b-icon icon="weather-windy" size="is-small"></b-icon>
+            <v-icon aria-label="Wind" role="img" aria-hidden="false" small>
+              {{ icons.mdiWeatherWindy }}
+            </v-icon>
             {{ currentWeather.wind.speed.toFixed(1) }}m/s |
             {{ getCardinal(currentWeather.wind.deg) }}
           </span>
 
           <span class="city-card__humidity" title="Humidity">
-            <b-icon icon="water" size="is-small"></b-icon
-            >{{ currentWeather.main.humidity }}%
+            <v-icon aria-label="Humidity" role="img" aria-hidden="false" small>
+              {{ icons.mdiWater }}
+            </v-icon>
+            {{ currentWeather.main.humidity }}%
           </span>
         </div>
 
@@ -53,13 +65,22 @@
           </span>
 
           <span class="city-card__pressure" title="Pressure">
-            <b-icon icon="gauge" size="is-small"></b-icon>
+            <v-icon aria-label="Pressure" role="img" aria-hidden="false" small>
+              {{ icons.mdiGauge }}
+            </v-icon>
             {{ currentWeather.main.pressure }}hPa
           </span>
 
           <span class="city-card__visibility" title="Visibility">
-            <b-icon icon="eye" size="is-small"></b-icon
-            >{{ (currentWeather.visibility / 1000).toFixed(1) }}km
+            <v-icon
+              aria-label="Visibility"
+              role="img"
+              aria-hidden="false"
+              small
+            >
+              {{ icons.mdiEye }}
+            </v-icon>
+            {{ (currentWeather.visibility / 1000).toFixed(1) }}km
           </span>
         </div>
       </div>
@@ -68,15 +89,22 @@
 </template>
 
 <script>
-// import Vue from 'vue';
-// import { Icon } from 'buefy';
-
-// Vue.use(Icon);
+import { mdiWeatherWindy, mdiWater, mdiGauge, mdiEye } from '@mdi/js';
 
 export default {
   name: 'AppCityCard',
   props: {
     currentWeather: Object,
+  },
+  data() {
+    return {
+      icons: {
+        mdiWeatherWindy,
+        mdiWater,
+        mdiGauge,
+        mdiEye,
+      },
+    };
   },
   methods: {
     getCardinal(angle) {
@@ -125,7 +153,7 @@ export default {
 
 <style lang="scss">
 .city-card {
-  margin: 10px 0;
+  margin: 10px 0 0;
   padding: 25px 20px;
   border-radius: 13px;
   color: #ffffff;
@@ -191,5 +219,15 @@ export default {
     rgb(16, 54, 99) 0.12%,
     rgb(23, 59, 105) 100%
   );
+}
+
+v-skeleton-loader:nth-child(1n) {
+  animation-delay: 1.3s !important;
+  background-image: linear-gradient(
+    90deg,
+    rgb(87, 17, 92) 25%,
+    rgb(110, 110, 110) 50%,
+    rgb(87, 17, 92) 75%
+  ) !important;
 }
 </style>

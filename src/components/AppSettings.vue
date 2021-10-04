@@ -1,6 +1,5 @@
 <template>
   <section class="settings">
-    <!-- <h2 class="title is-5">Settings</h2> -->
     <app-input :buttonText="buttonText" :labelText="labelText" />
     <draggable
       v-model="citiesList"
@@ -14,17 +13,32 @@
       <transition-group>
         <li class="list-group-item" v-for="(city, i) in citiesList" :key="city">
           <div class="settings__list-item">
-            <button
-              rounded
-              class="button is-small is-danger"
+            <v-btn
+              color="red"
+              elevation="1"
+              icon
+              tile
+              small
               @click="removeCity(i)"
             >
-              <b-icon icon="trash-can-outline"></b-icon>
-            </button>
+              <v-icon>
+                {{ icons.mdiTrashCanOutline }}
+              </v-icon>
+            </v-btn>
             <span class="settings__list-item-name">{{ city }}</span>
-            <button class="grab button is-small is-success">
-              <b-icon icon="menu"></b-icon>
-            </button>
+            <v-btn
+              class="grab"
+              color="green"
+              elevation="1"
+              icon
+              tile
+              small
+              @click="removeCity(i)"
+            >
+              <v-icon>
+                {{ icons.mdiMenu }}
+              </v-icon>
+            </v-btn>
           </div>
         </li>
       </transition-group>
@@ -36,10 +50,7 @@
 import AppInput from './AppInput.vue';
 import draggable from 'vuedraggable';
 
-// import Vue from 'vue';
-// import { Icon } from 'buefy';
-
-// Vue.use(Icon);
+import { mdiTrashCanOutline, mdiMenu } from '@mdi/js';
 
 export default {
   name: 'AppSettings',
@@ -52,6 +63,10 @@ export default {
       labelText: 'Add new one?',
       buttonText: 'Yeah!',
       drag: false,
+      icons: {
+        mdiTrashCanOutline,
+        mdiMenu,
+      },
     };
   },
   methods: {
@@ -86,14 +101,22 @@ export default {
 </script>
 
 <style lang="scss">
-.list-group::-webkit-scrollbar {
-  display: none;
+.list-group {
+  min-height: 60px;
+  height: 334px;
+  overflow-y: auto;
+  list-style-type: none;
+  padding-left: 0 !important;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .settings__list-item {
   display: flex;
   justify-content: space-between;
-  height: 53px;
+  height: 55.3px;
   padding: 11px 16px;
   background-color: #1c1c1e;
   color: #ffffff;
@@ -128,10 +151,5 @@ export default {
 .ghost {
   opacity: 0.5;
   background: #c8ebfb;
-}
-.list-group {
-  min-height: 60px;
-  height: 320px;
-  overflow-y: auto;
 }
 </style>
