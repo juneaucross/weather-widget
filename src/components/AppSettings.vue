@@ -16,14 +16,15 @@
           <div class="settings__list-item">
             <button
               rounded
-              class="button is-small is-danger"
+              class="button is-danger"
+              size="is-small"
               @click="removeCity(i)"
             >
-              <b-icon icon="trash-can-outline"></b-icon>
+              <b-icon icon="trash-can-outline" size="is-medium"></b-icon>
             </button>
             <span class="settings__list-item-name">{{ city }}</span>
-            <button class="grab button is-small is-success">
-              <b-icon icon="menu"></b-icon>
+            <button class="grab button is-success" size="is-small">
+              <b-icon icon="menu" size="is-medium"></b-icon>
             </button>
           </div>
         </li>

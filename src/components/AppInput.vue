@@ -10,11 +10,19 @@
       v-model="cityName"
       placeholder="Enter city name"
       id="app-input"
-      icon="../assets/psbrella.png"
+      icon="earth"
+      size="is-small"
+      class="is-small"
       @keypress.enter.native="addCity"
     >
     </b-input>
-    <b-button type="is-primary" @click="addCity">{{ buttonText }}</b-button>
+    <b-button
+      type="is-primary"
+      class="is-small"
+      size="is-small"
+      @click="addCity"
+      >{{ buttonText }}</b-button
+    >
   </b-field>
 </template>
 

@@ -6,15 +6,15 @@
 </template>
 
 <script>
-// import Vue from 'vue';
-// import Vuex from 'vuex';
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-// Vue.use(Vuex);
-// Vue.use(Buefy);
+Vue.use(Vuex);
+Vue.use(Buefy);
 
-// import store from './store';
+import store from './store';
 
-// import Buefy from 'buefy';
+import Buefy from 'buefy';
 // import 'buefy/dist/buefy.min.css';
 // import '@mdi/font/css/materialdesignicons.css';
 
@@ -22,8 +22,9 @@ import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 
 export default {
-  // store,
-  // Buefy,
+  store,
+  Buefy,
+  Vuex,
   name: 'App',
   components: {
     AppHeader,
@@ -32,6 +33,7 @@ export default {
 };
 </script>
 
+<style src="buefy/dist/buefy.min.css"></style>
 <style lang="scss">
 #app {
   position: absolute;

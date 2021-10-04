@@ -10,8 +10,8 @@
       <h1 class="title is-4 has-text-grey-lighter">PS weather</h1>
     </div>
     <div class="header__settings" v-show="citiesList.length >= 1">
-      <button class="button is-info" @click="toggleSettings">
-        <b-icon icon="cog" size="is-medium"> </b-icon>
+      <button class="button is-info" size="is-small" @click="toggleSettings">
+        <b-icon icon="cog" size="is-small"> </b-icon>
       </button>
     </div>
   </div>
