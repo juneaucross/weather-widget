@@ -1,28 +1,49 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <app-header />
+    <app-main />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+// import Vue from 'vue';
+// import Vuex from 'vuex';
+
+// Vue.use(Vuex);
+// Vue.use(Buefy);
+
+// import store from './store';
+
+// import Buefy from 'buefy';
+// import 'buefy/dist/buefy.min.css';
+// import '@mdi/font/css/materialdesignicons.css';
+
+import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
 
 export default {
-  name: "App",
+  // store,
+  // Buefy,
+  name: 'App',
   components: {
-    HelloWorld,
+    AppHeader,
+    AppMain,
   },
 };
 </script>
 
 <style lang="scss">
 #app {
+  position: absolute;
+  right: 0;
+  top: 60px;
+  width: 312px;
+  height: 500px;
+  background-color: rgb(21, 25, 27);
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  border-radius: 13px 0 0 13px;
 }
 </style>
