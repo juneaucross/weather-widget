@@ -1,12 +1,12 @@
 <template>
   <div class="header">
     <div class="header__title">
-      <img
+      <!-- <img
         alt="logo"
         class="header__logo"
         src="../assets/psbrella.png"
         height="50"
-      />
+      /> -->
       <h1 class="title is-4 has-text-grey-lighter">PS weather</h1>
     </div>
     <div class="header__settings" v-show="citiesList.length >= 1">

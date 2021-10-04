@@ -16,6 +16,7 @@
   </ul>
 </template>
 
+
 <script>
 import AppCityCard from './AppCityCard.vue';
 

@@ -15,8 +15,8 @@ Vue.use(Buefy);
 import store from './store';
 
 import Buefy from 'buefy';
-// import 'buefy/dist/buefy.min.css';
-// import '@mdi/font/css/materialdesignicons.css';
+// import './buefy/dist/buefy.min.css';
+// import './@mdi/font/css/materialdesignicons.css';
 
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
@@ -33,7 +33,7 @@ export default {
 };
 </script>
 
-<style src="buefy/dist/buefy.min.css"></style>
+<style src="../node_modules/buefy/dist/buefy.min.css"></style>
 <style lang="scss">
 #app {
   position: absolute;
