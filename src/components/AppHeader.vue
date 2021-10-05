@@ -7,7 +7,7 @@
         src="../assets/psbrella.png"
         height="50"
       />
-      <h1 class="grey--text text--lighten-1">PS weather</h1>
+      <h1 class="grey--text text--lighten-1 text-h5">PS weather</h1>
     </div>
     <div class="header__settings" v-show="citiesList.length >= 1">
       <v-btn
@@ -46,7 +46,6 @@ export default {
   },
   computed: {
     citiesList() {
-      console.log(this.icons.logo);
       return this.$store.getters.citiesList;
     },
   },

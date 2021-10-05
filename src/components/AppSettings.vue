@@ -116,7 +116,7 @@ export default {
 .settings__list-item {
   display: flex;
   justify-content: space-between;
-  height: 55.3px;
+  // height: 55.3px;
   padding: 11px 16px;
   background-color: #1c1c1e;
   color: #ffffff;
