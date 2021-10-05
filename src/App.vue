@@ -33,7 +33,7 @@ export default {
 };
 </script>
 
-<style src="../node_modules/buefy/dist/buefy.min.css"></style>
+<style src="./assets/chunk.css"></style>
 <style lang="scss">
 #app {
   position: absolute;
