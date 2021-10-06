@@ -7,31 +7,23 @@
         src="../assets/psbrella.png"
         height="50"
       />
-      <h1 class="grey--text text--lighten-1">PS weather</h1>
+      <h1 class="header__heading">PS weather</h1>
     </div>
     <div class="header__settings" v-show="citiesList.length >= 1">
-      <v-btn
-        color="blue"
-        elevation="2"
-        icon
-        large
-        rounded
-        tile
-        @click="toggleSettings"
-      >
-        <v-icon large>
-          {{ icons.mdiCog }}
-        </v-icon>
-      </v-btn>
+      <app-button large blue @click.native="toggleSettings" />
     </div>
   </div>
 </template>
 
 <script>
 import { mdiCog } from '@mdi/js';
+import AppButton from './AppButton.vue';
 
 export default {
   name: 'AppHeader',
+  components: {
+    AppButton,
+  },
   data() {
     return {
       icons: {
@@ -46,7 +38,6 @@ export default {
   },
   computed: {
     citiesList() {
-      console.log(this.icons.logo);
       return this.$store.getters.citiesList;
     },
   },
@@ -70,6 +61,10 @@ export default {
   &__logo {
     height: 50px;
     margin-right: 7px;
+  }
+
+  &__heading {
+    font-weight: bold;
   }
 }
 </style>

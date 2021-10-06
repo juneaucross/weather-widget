@@ -1,14 +1,6 @@
 <template>
   <li class="cards-list-item">
-    <v-skeleton-loader
-      v-if="isLoading"
-      class="mx-auto mt-3"
-      max-width="285"
-      height="204.5"
-      type="card"
-    ></v-skeleton-loader>
-
-    <div class="city-card" v-else>
+    <div class="city-card">
       <div class="city-card__row city-card__row--name">
         <span class="city-card__name">
           {{ currentWeather.name }}, {{ currentWeather.sys.country }}</span
@@ -38,48 +30,79 @@
 
       <div class="city-card__row city-card__row--info">
         <div class="city-card__col">
-          <span class="city-card__feelslike">
+          <span class="city-card__info-span">
             Feels like:
             {{ Math.floor(currentWeather.main.feels_like) }}&#176;C
           </span>
 
-          <span class="city-card__wind" title="Wind">
-            <v-icon aria-label="Wind" role="img" aria-hidden="false" small>
-              {{ icons.mdiWeatherWindy }}
-            </v-icon>
+          <span class="city-card__info-span" title="Wind">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              role="img"
+              aria-hidden="false"
+              aria-label="Wind"
+              width="13"
+              height="13"
+              class="city-card__svg"
+            >
+              <path :d="icons.mdiWeatherWindy"></path>
+            </svg>
             {{ currentWeather.wind.speed.toFixed(1) }}m/s |
             {{ getCardinal(currentWeather.wind.deg) }}
           </span>
 
-          <span class="city-card__humidity" title="Humidity">
-            <v-icon aria-label="Humidity" role="img" aria-hidden="false" small>
-              {{ icons.mdiWater }}
-            </v-icon>
+          <span class="city-card__info-span" title="Humidity">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              role="img"
+              aria-hidden="false"
+              aria-label="Humidity"
+              width="13"
+              height="13"
+              class="city-card__svg"
+            >
+              <path :d="icons.mdiWater"></path>
+            </svg>
             {{ currentWeather.main.humidity }}%
           </span>
         </div>
 
         <div class="city-card__col">
-          <span class="city-card__dewpoint">
+          <span class="city-card__info-span">
             Dew point: {{ dewPoint }}&#176;C
           </span>
 
-          <span class="city-card__pressure" title="Pressure">
-            <v-icon aria-label="Pressure" role="img" aria-hidden="false" small>
-              {{ icons.mdiGauge }}
-            </v-icon>
+          <span class="city-card__info-span" title="Pressure">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              role="img"
+              aria-hidden="false"
+              aria-label="Pressure"
+              width="13"
+              height="13"
+              class="city-card__svg"
+            >
+              <path :d="icons.mdiGauge"></path>
+            </svg>
             {{ currentWeather.main.pressure }}hPa
           </span>
 
-          <span class="city-card__visibility" title="Visibility">
-            <v-icon
-              aria-label="Visibility"
+          <span class="city-card__info-span" title="Visibility">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
               role="img"
               aria-hidden="false"
-              small
+              aria-label="Visibility"
+              width="13"
+              height="13"
+              class="city-card__svg"
             >
-              {{ icons.mdiEye }}
-            </v-icon>
+              <path :d="icons.mdiEye"></path>
+            </svg>
             {{ (currentWeather.visibility / 1000).toFixed(1) }}km
           </span>
         </div>
@@ -153,7 +176,7 @@ export default {
 
 <style lang="scss">
 .city-card {
-  margin: 10px 0 0;
+  margin: 12px 0 0;
   padding: 25px 20px;
   border-radius: 13px;
   color: #ffffff;
@@ -175,6 +198,19 @@ export default {
       align-items: flex-start;
       font-size: 13px;
     }
+  }
+
+  &__info-span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__svg {
+    width: 13px;
+    height: 13px;
+    margin-right: 3px;
+    fill: currentColor;
   }
 
   &__col {
@@ -201,33 +237,14 @@ export default {
 }
 
 .cards-list-item:nth-child(1n) .city-card {
-  background-image: linear-gradient(
-    rgb(87, 17, 92) 0.12%,
-    rgb(93, 25, 99) 100%
-  );
+  background-image: linear-gradient(#57115c 0.12%, #5d1963 100%);
 }
 
 .cards-list-item:nth-child(2n) .city-card {
-  background-image: linear-gradient(
-    rgb(34, 5, 94) 0.12%,
-    rgb(41, 12, 101) 100%
-  );
+  background-image: linear-gradient(#22055e 0.12%, #290c65 100%);
 }
 
 .cards-list-item:nth-child(3n) .city-card {
-  background-image: linear-gradient(
-    rgb(16, 54, 99) 0.12%,
-    rgb(23, 59, 105) 100%
-  );
-}
-
-v-skeleton-loader:nth-child(1n) {
-  animation-delay: 1.3s !important;
-  background-image: linear-gradient(
-    90deg,
-    rgb(87, 17, 92) 25%,
-    rgb(110, 110, 110) 50%,
-    rgb(87, 17, 92) 75%
-  ) !important;
+  background-image: linear-gradient(#103663 0.12%, #173b69 100%);
 }
 </style>

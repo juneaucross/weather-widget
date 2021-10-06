@@ -1,6 +1,6 @@
 <template>
   <section class="greeting">
-    <h4 class="grey--text text--lighten-1 text-h4 mb-5">Hi there!</h4>
+    <span class="greeting__heading">Hi there!</span>
     <app-input :buttonText="buttonText" :labelText="labelText" />
   </section>
 </template>
@@ -22,10 +22,15 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .greeting {
   display: flex;
   flex-direction: column;
   padding-top: 50px;
+
+  &__heading {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
 }
 </style>

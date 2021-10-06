@@ -3,42 +3,19 @@
     <app-input :buttonText="buttonText" :labelText="labelText" />
     <draggable
       v-model="citiesList"
-      tag="ul"
+      tag="div"
       v-bind="dragOptions"
       @start="drag = true"
       @end="drag = false"
       handle=".grab"
-      class="list-group"
+      class="draggable"
     >
-      <transition-group>
+      <transition-group tag="ul" class="settings__list">
         <li class="list-group-item" v-for="(city, i) in citiesList" :key="city">
           <div class="settings__list-item">
-            <v-btn
-              color="red"
-              elevation="1"
-              icon
-              tile
-              small
-              @click="removeCity(i)"
-            >
-              <v-icon>
-                {{ icons.mdiTrashCanOutline }}
-              </v-icon>
-            </v-btn>
+            <app-button small red @click.native="removeCity(i)" />
             <span class="settings__list-item-name">{{ city }}</span>
-            <v-btn
-              class="grab"
-              color="green"
-              elevation="1"
-              icon
-              tile
-              small
-              @click="removeCity(i)"
-            >
-              <v-icon>
-                {{ icons.mdiMenu }}
-              </v-icon>
-            </v-btn>
+            <app-button small green class="grab" />
           </div>
         </li>
       </transition-group>
@@ -48,6 +25,7 @@
 
 <script>
 import AppInput from './AppInput.vue';
+import AppButton from './AppButton.vue';
 import draggable from 'vuedraggable';
 
 import { mdiTrashCanOutline, mdiMenu } from '@mdi/js';
@@ -56,6 +34,7 @@ export default {
   name: 'AppSettings',
   components: {
     AppInput,
+    AppButton,
     draggable,
   },
   data() {
@@ -101,16 +80,23 @@ export default {
 </script>
 
 <style lang="scss">
-.list-group {
+.draggable {
   min-height: 60px;
   height: 334px;
   overflow-y: auto;
-  list-style-type: none;
-  padding-left: 0 !important;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.settings__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .settings__list-item {

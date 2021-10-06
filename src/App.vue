@@ -1,8 +1,8 @@
 <template>
-  <v-app id="app">
+  <article id="app">
     <app-header />
     <app-main />
-  </v-app>
+  </article>
 </template>
 
 <script>
@@ -19,15 +19,21 @@ export default {
 </script>
 
 <style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 #app {
   position: fixed;
   right: 0;
   top: 60px;
   width: 312px;
   height: 530px;
-  font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  color: #bdbdbd;
+  background-color: #121212;
   text-align: center;
   border-radius: 13px 0 0 13px;
 }
