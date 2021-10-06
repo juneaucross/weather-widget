@@ -48,8 +48,8 @@ export default {
   position: absolute;
   right: 0;
   top: 60px;
-  width: 312px;
-  height: 530px;
+  width: 312px !important;
+  height: 530px !important;
   font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

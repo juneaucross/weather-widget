@@ -40,7 +40,7 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "vue-cli-plugin-vuetify": "~2.4.2",
     "vue-template-compiler": "^2.6.11",
-    "vuetify-loader": "^1.7.0",
+    "vuetify-loader": "^1.7.3",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
   },
