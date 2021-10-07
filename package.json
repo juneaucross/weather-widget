@@ -6,19 +6,12 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "webcomp": "vue-cli-service build --target wc --inline-vue --name weather-widget ./src/App.vue",
-    "wrap": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "vce": "vue-cli-service build --target lib --name weather-widget src/main.js"
+    "webcomp": "vue-cli-service build --target wc --inline-vue --name weather-widget ./src/App.vue"
   },
   "dependencies": {
-    "@mdi/font": "^6.2.95",
     "@mdi/js": "^6.2.95",
-    "@vue/web-component-wrapper": "^1.3.0",
-    "buefy": "^0.9.10",
     "core-js": "^3.6.5",
-    "document-register-element": "^1.14.10",
     "vue": "^2.6.11",
-    "vue-custom-element": "^3.3.0",
     "vuedraggable": "^2.24.3",
     "vuetify": "^2.4.0",
     "vuex": "^3.4.0"
@@ -30,19 +23,15 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
-    "cross-env": "^7.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
     "prettier": "^2.2.1",
     "sass": "~1.32.0",
     "sass-loader": "^10.0.0",
-    "uglifyjs-webpack-plugin": "^2.2.0",
     "vue-cli-plugin-vuetify": "~2.4.2",
     "vue-template-compiler": "^2.6.11",
-    "vuetify-loader": "^1.7.3",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12"
+    "vuetify-loader": "^1.7.3"
   },
   "prettier": {
     "singleQuote": true

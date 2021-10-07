@@ -12,11 +12,11 @@
           :prepend-inner-icon="icons.mdiMapMarker"
           :error-messages="this.errorMsg"
         >
-          <!-- <template v-slot:append v-if="buttonText === 'Yeah!'">
+          <template v-slot:append v-if="buttonText === 'Yeah!'">
             <v-btn color="orange" outlined small @click="addCity">
               {{ buttonText }}
             </v-btn>
-          </template> -->
+          </template>
         </v-text-field>
       </v-col>
     </v-row>
