@@ -9,7 +9,6 @@
     "webcomp": "vue-cli-service build --target wc --inline-vue --name weather-widget ./src/App.vue"
   },
   "dependencies": {
-    "@mdi/font": "^6.2.95",
     "buefy": "^0.9.10",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",

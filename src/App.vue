@@ -8,15 +8,12 @@
 <script>
 import Vue from 'vue';
 import Vuex from 'vuex';
-
-Vue.use(Vuex);
-Vue.use(Buefy);
+import Buefy from 'buefy';
 
 import store from './store';
 
-import Buefy from 'buefy';
-// import './buefy/dist/buefy.min.css';
-// import './@mdi/font/css/materialdesignicons.css';
+Vue.use(Vuex);
+Vue.use(Buefy);
 
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';

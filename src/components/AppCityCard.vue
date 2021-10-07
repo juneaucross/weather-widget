@@ -68,10 +68,6 @@
 </template>
 
 <script>
-// import Vue from 'vue';
-// import { Icon } from 'buefy';
-
-// Vue.use(Icon);
 
 export default {
   name: 'AppCityCard',

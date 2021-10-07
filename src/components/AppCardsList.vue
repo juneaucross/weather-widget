@@ -20,11 +20,6 @@
 <script>
 import AppCityCard from './AppCityCard.vue';
 
-// import Vue from 'vue';
-// import { Skeleton } from 'buefy';
-
-// Vue.use(Skeleton);
-
 export default {
   name: 'AppCardsList',
   components: {

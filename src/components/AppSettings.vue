@@ -1,6 +1,5 @@
 <template>
   <section class="settings">
-    <!-- <h2 class="title is-5">Settings</h2> -->
     <app-input :buttonText="buttonText" :labelText="labelText" />
     <draggable
       v-model="citiesList"
@@ -36,11 +35,6 @@
 <script>
 import AppInput from './AppInput.vue';
 import draggable from 'vuedraggable';
-
-// import Vue from 'vue';
-// import { Icon } from 'buefy';
-
-// Vue.use(Icon);
 
 export default {
   name: 'AppSettings',
