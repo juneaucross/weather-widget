@@ -1,4 +1,6 @@
-![PS weather logo](https://juneaucross.github.io/weather-widget/misc/psbrella.png  | width=100) PS weather
+<!-- ![PS weather logo](https://juneaucross.github.io/weather-widget/misc/psbrella.png  | width=100) PS weather -->
+
+<img src="https://juneaucross.github.io/weather-widget/misc/psbrella.png" width="100" height="100">
 
 # PS weather
 
