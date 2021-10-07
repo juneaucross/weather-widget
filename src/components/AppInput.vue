@@ -19,13 +19,6 @@
 </template>
 
 <script>
-// import Vue from 'vue';
-// import { Field, Input, Button } from 'buefy';
-
-// Vue.use(Field);
-// Vue.use(Input);
-// Vue.use(Button);
-
 export default {
   name: 'AppInput',
   props: {
